@@ -53,7 +53,8 @@ def puller (url, dir):
 def progress(msg, cond_thread):
     symbols = ('|   ', '\\   ', '|   ', '/   ')
     count = 0
-    print("[" + pprint ("green", "bold", msg.split()[0]) + "] " + pprint("yellow", "bold", msg.split()[1]), end=' ')
+    # print("[" + pprint ("green", "bold", msg.split()[0]) + "] " + pprint("yellow", "bold", msg.split()[1]), end=' ')
+    print("[" + pprint ("green", "bold", msg.split()[0]) + "] " + f'{pprint("yellow", "bold", msg.split()[1]):<30}', end=' ')
     start = time.time()
     while cond_thread.is_alive():
         print(symbols[count], end='\b\b\b\b')
